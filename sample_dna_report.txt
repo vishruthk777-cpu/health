@@ -1,0 +1,7 @@
+# Helix DNA Genomic Profile Registry
+# Patient Name: Alex Mercer
+# Format: rsid chromosome position genotype
+rs429358 19 44908684 CT
+rs1801133 1 11796321 CT
+rs7903146 10 112998590 CT
+# End of Sequence Data

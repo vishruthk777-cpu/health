@@ -1,0 +1,11 @@
+PRESCRIPTION ORDER
+Date: 2026-03-15
+Prescribing Clinician: Dr. Marcus Vance, MD
+Facility: Pacific Health Center
+Patient: Personnel User
+
+Rx:
+1. Atorvastatin 20mg - Take 1 tablet orally daily at bedtime for 90 days
+2. Metformin 500mg - Take 1 tablet orally twice daily with meals for 90 days
+
+Diagnosis: Primary Hyperlipidemia, Type 2 Diabetes Mellitus

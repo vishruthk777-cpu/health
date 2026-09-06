@@ -1,0 +1,13 @@
+{
+  "name": "lifeos-ai",
+  "version": "4.0.0",
+  "description": "LifeOS AI 4.0 - Autonomous Healthcare Ecosystem",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test": "node tests/production_e2e_ingestion_tests.js"
+  }
+}

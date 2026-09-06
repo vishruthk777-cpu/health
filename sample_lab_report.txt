@@ -1,0 +1,24 @@
+========================================================================
+                      QUEST DIAGNOSTICS LABORATORY REPORT
+========================================================================
+Laboratory: Quest Diagnostics Inc, Metro Division
+Collection Date: 2026-07-15
+Report Date: 2026-07-16
+Physician: Dr. Helen Vance
+Patient Name: Alex Mercer
+Age: 32
+Gender: Male
+Patient ID: 25070725017-AM
+
+------------------------------------------------------------------------
+TEST NAME            VALUE       UNIT      REFERENCE RANGE     STATUS
+------------------------------------------------------------------------
+Fasting Glucose      104         mg/dL     70 - 99             HIGH
+Hemoglobin A1c       5.8         %         4.0 - 5.6           HIGH
+Apolipoprotein B     125         mg/dL     < 90                HIGH
+========================================================================
+Verification Stamp: Quest Diagnostics Authorized Sign-off
+Signature: Dr. Helen Vance, MD (Endocrinology Division)
+Barcode: *QUEST9812401*
+QR-Code: https://questdiagnostics.com/records/verify?id=25070725017-AM
+========================================================================

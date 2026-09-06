@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Local database and uploaded runtime data
+data/
+data/lifeos.db*
+data/documents/clean/
+data/documents/quarantine/
+
+# Malware test fixtures (prevent GitHub virus scanner false positives)
+sample_eicar_test.txt
+
+# Scratch scripts and temporary test files
+scratch/
+scratch_debug.js
+.system_generated/
+
+# Vercel
+.vercel/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db

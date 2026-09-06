@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS AI | The Operating System For Human Health</title>
+    <meta name="description" content="LifeOS AI is the world's first autonomous healthcare ecosystem. Predict, prevent, and personalize your health through genomics, digital twins, real-time telemetry, and collaborating AI agents.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css?v=10">
+    <link rel="stylesheet" href="css/dashboard.css?v=10">
+</head>
+<body>
+    <div id="landing-page-wrapper">
+        <!-- Floating Background Effects -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- Left Brand Unit -->
+            <div class="brand-group">
+                <a href="#" class="logo-wrapper">
+                    <svg class="logo-svg" viewBox="0 0 100 100" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00E5FF" />
+                                <stop offset="50%" stop-color="#00FFD1" />
+                                <stop offset="100%" stop-color="#9061F9" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="url(#logoGrad)" stroke-width="4" stroke-dasharray="10 5" class="logo-circle-outer" />
+                        <path d="M40 35 C40 35, 45 42, 50 50 C55 58, 60 65, 60 65 M60 35 C60 35, 55 42, 50 50 C45 58, 40 65, 40 65" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round" class="logo-dna" />
+                        <circle cx="50" cy="50" r="6" fill="#00FFD1" class="logo-core" />
+                    </svg>
+                    <span class="logo-text">Life<span class="text-accent">OS</span><span class="text-sub">AI</span></span>
+                </a>
+                <span class="brand-divider">/</span>
+                <a href="#personnel-wellness" class="brand-product-label" id="nav-btn-personnel-wellness">
+                    <i data-lucide="user-check"></i>
+                    <span>Personnel Wellness</span>
+                </a>
+            </div>
+
+            <!-- Center Navigation Links -->
+            <nav class="nav-links">
+                <a href="#digital-twin" class="nav-item">Health Twin</a>
+                <a href="#agent-ecosystem" class="nav-item">AI Agents</a>
+                <a href="#triage" class="nav-item">Consultation</a>
+                <a href="#report-analyzer" class="nav-item">Decoder</a>
+                <a href="#search-engine" class="nav-item">Search</a>
+                <a href="#simulator" class="nav-item">Simulator</a>
+                <a href="#biomarkers" class="nav-item">Biomarkers</a>
+                <a href="#longevity" class="nav-item">Longevity</a>
+                <a href="#investors" class="nav-item">Investors</a>
+                <a href="#personnel-wellness" class="nav-item mobile-only-nav"><i data-lucide="user-check"></i> Personnel Wellness</a>
+            </nav>
+
+            <!-- Right Action Area -->
+            <div class="header-actions">
+                <a href="#early-access" class="btn btn-primary btn-nav-cta">Join Early Access</a>
+                <button class="mobile-toggle" aria-label="Toggle navigation">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+
+        <!-- 1. HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <canvas id="hero-canvas" class="hero-canvas"></canvas>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-tagline-wrapper">
+                        <span class="badge hero-badge">
+                            <span class="badge-dot"></span> AUTONOMOUS HEALTHCARE PROTOCOL V2.0
+                        </span>
+                    </div>
+                    <h1 class="hero-title">The Future Of Medicine Is <span class="text-gradient">Autonomous</span>.</h1>
+                    <p class="hero-subtitle">
+                        LifeOS AI creates a living digital twin of every individual, continuously learning from genomics, diagnostics, wearables, medical history, lifestyle data, and physician insights to predict, prevent, and personalize healthcare.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#personnel-wellness" class="btn btn-primary" id="hero-btn-personnel-wellness" style="background: linear-gradient(135deg, #00E5FF, #9061F9); border: none;">
+                            <i data-lucide="user-check"></i> Personnel Wellness Profile
+                        </a>
+                        <a href="#early-access" class="btn btn-secondary text-mono">Join Early Access</a>
+                        <a href="#digital-twin" class="btn btn-secondary">
+                            <span>Experience LifeOS</span> <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-fade-bottom"></div>
+        </section>
+
+        <!-- 1.5 PERSONNEL WELLNESS FEATURE SHOWCASE -->
+        <section class="section wellness-showcase-section" id="personnel-wellness-section" style="padding: 40px 0; background: rgba(0, 229, 255, 0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div class="glass-card p-lg" style="border: 1px solid rgba(0, 229, 255, 0.3); background: rgba(7, 11, 25, 0.85);">
+                    <div class="grid grid-2-col align-center gap-lg">
+                        <div>
+                            <span class="badge hero-badge mb-sm" style="background: rgba(0, 255, 209, 0.15); color: #00FFD1; border: 1px solid rgba(0, 255, 209, 0.3);">
+                                <i data-lucide="shield-check" class="inline mr-xs"></i> NEW COMPONENT RELEASED
+                            </span>
+                            <h2 class="section-title text-gradient" style="font-size: 1.8rem;">Personnel Wellness Profile</h2>
+                            <p class="section-desc text-slate" style="margin-bottom: 20px;">
+                                A privacy-conscious, non-surveillance foundation for service context, workload rhythm, duty schedules, deployments, and voluntary welfare monitoring.
+                            </p>
+                            <div class="flex gap-md flex-wrap">
+                                <a href="#personnel-wellness" class="btn btn-primary" id="card-btn-personnel-wellness" style="background: linear-gradient(135deg, #00E5FF, #9061F9); border: none;">
+                                    <i data-lucide="user-check"></i> Open Personnel Wellness Profile
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="panel-stats-grid text-xs p-md" style="background: rgba(15, 23, 42, 0.6); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.05);">
+                                <div class="dp-row" style="display:flex; justify-content: space-between; padding:6px 0; border-bottom: 1px dashed rgba(255,255,255,0.05);"><span>Domain Separation:</span> <strong class="text-purple">Medical Data Firewall Active</strong></div>
+                                <div class="dp-row" style="display:flex; justify-content: space-between; padding:6px 0; border-bottom: 1px dashed rgba(255,255,255,0.05);"><span>Privacy Model:</span> <strong class="text-cyan">Data Minimization & Purpose Limitation</strong></div>
+                                <div class="dp-row" style="display:flex; justify-content: space-between; padding:6px 0; border-bottom: 1px dashed rgba(255,255,255,0.05);"><span>Policy Rule:</span> <strong class="text-teal">Non-Disciplinary Welfare System</strong></div>
+                                <div class="dp-row" style="display:flex; justify-content: space-between; padding:6px 0;"><span>Consent Engine:</span> <strong class="text-green">Explicit Grant / Revoke Controls</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. THE PROBLEM -->
+        <section class="section problem-section" id="problem">
+            <div class="container">
+                <div class="grid grid-2-col align-center gap-lg">
+                    <div class="problem-content">
+                        <div class="section-tag text-purple">The Infrastructure Failure</div>
+                        <h2 class="section-title">Healthcare Is Broken.</h2>
+                        <p class="section-desc">
+                            Modern medicine is designed as a reactive loop—waiting for biological systems to fail before intervening. This infrastructure leads to critical limitations.
+                        </p>
+                        <div class="problem-grid-list">
+                            <div class="prob-item">
+                                <div class="prob-icon"><i data-lucide="alert-triangle"></i></div>
+                                <div>
+                                    <strong>Reactive Care Model:</strong> We treat the damage instead of correcting the trajectory.
+                                </div>
+                            </div>
+                            <div class="prob-item">
+                                <div class="prob-icon"><i data-lucide="timer"></i></div>
+                                <div>
+                                    <strong>Late Diagnosis:</strong> Chronic pathologies and tumors are identified years after cellular onset.
+                                </div>
+                            </div>
+                            <div class="prob-item">
+                                <div class="prob-icon"><i data-lucide="lock"></i></div>
+                                <div>
+                                    <strong>Fragmented Records:</strong> Critical health information remains locked in legacy silos.
+                                </div>
+                            </div>
+                            <div class="prob-item">
+                                <div class="prob-icon"><i data-lucide="users"></i></div>
+                                <div>
+                                    <strong>One-Size-Fits-All:</strong> Generic therapeutics prescribed for highly unique biological sequences.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="problem-visualization">
+                        <div class="glass-card problem-card">
+                            <h3 class="card-title text-center text-mono text-sm">TRADITIONAL HEALTHCARE TIMELINE</h3>
+                            <div class="timeline-vertical mt-md">
+                                <div class="timeline-track bg-red-track"></div>
+                                <div class="timeline-step active" data-step="1">
+                                    <div class="timeline-node danger"><i data-lucide="activity-square"></i></div>
+                                    <div class="timeline-info">
+                                        <h4>1. Symptoms Appear</h4>
+                                        <p class="text-xs text-slate">Pathology progresses to physical manifestation. Damage is already active.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step active" data-step="2">
+                                    <div class="timeline-node danger"><i data-lucide="calendar"></i></div>
+                                    <div class="timeline-info">
+                                        <h4>2. Doctor Visit</h4>
+                                        <p class="text-xs text-slate">Appointment scheduled post-onset. Markers read against generic population averages.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step active" data-step="3">
+                                    <div class="timeline-node danger"><i data-lucide="clipboard-list"></i></div>
+                                    <div class="timeline-info">
+                                        <h4>3. Diagnosis</h4>
+                                        <p class="text-xs text-slate">Broad category label applied based on advanced stage symptoms.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step active" data-step="4">
+                                    <div class="timeline-node danger"><i data-lucide="pill"></i></div>
+                                    <div class="timeline-info">
+                                        <h4>4. Treatment</h4>
+                                        <p class="text-xs text-slate">Standardized drug therapy begun. Trial-and-error cycle to manage symptoms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-md text-mono text-red text-xs">MODEL: REACTIVE HEALTHCARE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. THE LIFEOS MODEL -->
+        <section class="section lifeos-model-section" id="model">
+            <div class="container">
+                <div class="grid grid-2-col align-center gap-lg">
+                    <div class="model-visualization">
+                        <div class="glass-card model-card">
+                            <h3 class="card-title text-center text-mono text-sm">LIFEOS AUTONOMOUS PROTOCOL</h3>
+                            <div class="timeline-vertical mt-md">
+                                <div class="timeline-track bg-cyan-track"></div>
+                                <div class="timeline-step active" data-step="1">
+                                    <div class="timeline-node success"><i data-lucide="database"></i></div>
+                                    <div class="timeline-info">
+                                        <h4>1. Continuous Data Integration</h4>
+                                        <p class="text-xs text-slate">Genomics, real-time wearables, and multi-omic blood panels constantly stream into your Health Twin.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step active" data-step="2">
+                                    <div class="timeline-node success"><i data-lucide="brain-circuit"></i></div>
+                                    <div class="timeline-info">
+                                        <h4>2. Collaborative AI Intelligence</h4>
+                                        <p class="text-xs text-slate">Autonomous specialized agents cross-reference data inputs against global research.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step active" data-step="3">
+                                    <div class="timeline-node success"><i data-lucide="shield-alert"></i></div>
+                                    <div class="timeline-info">
+                                        <h4>3. Early Prediction</h4>
+                                        <p class="text-xs text-slate">System identifies metabolic, cardiac, or oncology risk vectors years before onset.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step active" data-step="4">
+                                    <div class="timeline-node success"><i data-lucide="heart-handshake"></i></div>
+                                    <div class="timeline-info">
+                                        <h4>4. Precision Prevention & Personalization</h4>
+                                        <p class="text-xs text-slate">Genomic nutrition, medication optimization, and targeted longevity therapies restore equilibrium.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-md text-mono text-cyan text-xs">MODEL: AUTONOMOUS HEALTHCARE</div>
+                        </div>
+                    </div>
+                    <div class="model-content">
+                        <div class="section-tag text-cyan">The Trajectory Shift</div>
+                        <h2 class="section-title">From Reactive Care To Autonomous Health.</h2>
+                        <p class="section-desc">
+                            We don't manage chronic conditions. We systematically identify and eliminate preventable diseases by shifting your biology from a reactive state to a continuous, personalized optimization loop.
+                        </p>
+                        <div class="model-benefits">
+                            <div class="benefit-item">
+                                <i data-lucide="check-circle" class="text-cyan"></i>
+                                <span><strong>Predictive:</strong> Foresee risks years before cellular dysfunction escalates.</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i data-lucide="check-circle" class="text-cyan"></i>
+                                <span><strong>Continuous:</strong> Real-time biomarker streaming instead of periodic checklists.</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i data-lucide="check-circle" class="text-cyan"></i>
+                                <span><strong>Preventive:</strong> Directed biological interventions to arrest disease pathways.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FLAGSHIP FEATURE: THE AI HEALTH TWIN -->
+        <section class="section twin-section" id="digital-twin">
+            <div class="container">
+                <div class="grid grid-2-col align-center gap-lg">
+                    <div class="twin-content">
+                        <div class="section-tag text-cyan">Flagship Core Protocol</div>
+                        <h2 class="section-title">A Living Digital Twin Of Your Body.</h2>
+                        <p class="section-desc">
+                            LifeOS AI builds a continuously evolving simulation model of your physical system. By consolidating genetic, diagnostic, and real-time telemetry inputs, your Health Twin tests wellness scenarios to identify optimal bio-trajectories.
+                        </p>
+                        <div class="twin-inputs-list text-xs text-mono">
+                            <div class="ti-item"><i data-lucide="dna" class="text-purple"></i> <span>Genomic Sequencing (3.2B Base Pairs)</span></div>
+                            <div class="ti-item"><i data-lucide="droplet" class="text-red"></i> <span>Blood Biomarkers & Metabolic Panels</span></div>
+                            <div class="ti-item"><i data-lucide="watch" class="text-cyan"></i> <span>Continuous Wearable Telemetry (1Hz)</span></div>
+                            <div class="ti-item"><i data-lucide="brain" class="text-teal"></i> <span>Mental Health & Autonomic Stress Indices</span></div>
+                            <div class="ti-item"><i data-lucide="pill" class="text-yellow"></i> <span>Medication & Pharmacogenomic Profiles</span></div>
+                        </div>
+                    </div>
+                    <div class="twin-visualization-container">
+                        <div class="glass-card twin-card">
+                            <div class="twin-card-header">
+                                <div class="twin-status">
+                                    <span class="pulse-dot green"></span> Core Synchronized
+                                </div>
+                                <div class="twin-id text-mono">TWIN_ID: L-OS_99182</div>
+                            </div>
+                            <div class="twin-graphics-wrapper">
+                                <svg class="twin-svg" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+                                    <g class="twin-bg-lines" opacity="0.25" stroke="#7C3AED" stroke-width="0.5">
+                                        <line x1="100" y1="50" x2="60" y2="120" />
+                                        <line x1="100" y1="50" x2="140" y2="120" />
+                                        <line x1="100" y1="130" x2="100" y2="240" />
+                                        <line x1="100" y1="130" x2="80" y2="180" />
+                                        <line x1="100" y1="130" x2="120" y2="180" />
+                                        <line x1="100" y1="240" x2="70" y2="340" />
+                                        <line x1="100" y1="240" x2="130" y2="340" />
+                                    </g>
+                                    <path class="twin-silhouette" d="M100 20 C90 20, 85 28, 85 38 C85 48, 92 54, 100 54 C108 54, 115 48, 115 38 C115 28, 110 20, 100 20 Z M100 54 C90 54, 75 60, 70 70 L60 140 C58 145, 63 150, 68 148 L75 145 L75 220 L68 350 C67 360, 80 365, 83 350 L95 240 L100 240 L105 240 L117 350 C120 365, 133 360, 132 350 L125 220 L125 145 L132 148 C137 150, 142 145, 140 140 L130 70 C125 60, 110 54, 100 54 Z" fill="none" stroke="rgba(0, 229, 255, 0.2)" stroke-width="2" />
+                                    <g class="twin-node-group active" data-organ="brain" transform="translate(100, 37)">
+                                        <circle class="twin-node-ring" r="14" fill="none" stroke="#00E5FF" stroke-width="1" />
+                                        <circle class="twin-node-core" r="5" fill="#00E5FF" />
+                                    </g>
+                                    <g class="twin-node-group" data-organ="heart" transform="translate(100, 100)">
+                                        <circle class="twin-node-ring" r="14" fill="none" stroke="#FF3B30" stroke-width="1" />
+                                        <circle class="twin-node-core" r="5" fill="#FF3B30" />
+                                    </g>
+                                    <g class="twin-node-group" data-organ="vascular" transform="translate(115, 130)">
+                                        <circle class="twin-node-ring" r="12" fill="none" stroke="#00FFD1" stroke-width="1" />
+                                        <circle class="twin-node-core" r="4" fill="#00FFD1" />
+                                    </g>
+                                    <g class="twin-node-group" data-organ="digestive" transform="translate(100, 170)">
+                                        <circle class="twin-node-ring" r="14" fill="none" stroke="#9061F9" stroke-width="1" />
+                                        <circle class="twin-node-core" r="5" fill="#9061F9" />
+                                    </g>
+                                    <g class="twin-node-group" data-organ="cellular" transform="translate(100, 250)">
+                                        <circle class="twin-node-ring" r="14" fill="none" stroke="#00FFD1" stroke-width="1" />
+                                        <circle class="twin-node-core" r="5" fill="#00FFD1" />
+                                    </g>
+                                </svg>
+                                <div class="twin-stats-panel glass-card" id="twin-stats-panel">
+                                    <div class="panel-header-sub text-mono text-cyan" id="twin-panel-title">SYSTEM: NEURAL CORE</div>
+                                    <div class="panel-stats-grid" id="twin-panel-stats">
+                                        <div class="stat-row" style="grid-column: span 2; text-align: center; color: var(--text-slate); font-size: 0.75rem; padding: 10px 0;">
+                                            No verified data available. Upload or connect your information to continue.
+                                        </div>
+                                    </div>
+                                    <div class="panel-disclaimer text-xs text-slate mt-sm">
+                                        * Select nodes on the Health Twin coordinates vector to inspect specific bodily subsystems.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. AUTONOMOUS AI AGENT ECOSYSTEM -->
+        <section class="section agent-ecosystem-section" id="agent-ecosystem">
+            <div class="container">
+                <div class="section-tag text-purple text-center">Collaboration Engine</div>
+                <h2 class="section-title text-center">Your Personal Medical Team. Powered By AI.</h2>
+                <p class="section-desc text-center max-w-sm">
+                    LifeOS coordinates ten specialized autonomous AI agents that collaborate continuously to analyze genomic baseline variations, research trials, and metabolic signals.
+                </p>
+                <div class="grid grid-2-col mt-lg">
+                    <!-- Left: Agent Grid -->
+                    <div class="agents-grid">
+                        <div class="agent-card glass-card active" data-agent="cmo">
+                            <div class="agent-header">
+                                <i data-lucide="shield-check" class="text-cyan"></i>
+                                <h3>Chief Medical Officer Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Coordinates overall diagnostic assessments and directs care recommendations.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="diagnostic">
+                            <div class="agent-header">
+                                <i data-lucide="stethoscope" class="text-purple"></i>
+                                <h3>Diagnostic Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Analyzes patient symptoms, lab markers, and diagnostic imaging anomalies.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="genome">
+                            <div class="agent-header">
+                                <i data-lucide="dna" class="text-teal"></i>
+                                <h3>Genome Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Sequence-maps hereditary variants and identifies pharmacological sensitivities.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="research">
+                            <div class="agent-header">
+                                <i data-lucide="microscope" class="text-yellow"></i>
+                                <h3>Research Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Queries medical databases (PubMed, clinical trials) for matching clinical vectors.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="drug">
+                            <div class="agent-header">
+                                <i data-lucide="pill" class="text-red"></i>
+                                <h3>Drug Intelligence Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Analyzes pharmacological compound interactions and hepatic clearance rates.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="nutrition">
+                            <div class="agent-header">
+                                <i data-lucide="leaf" class="text-green"></i>
+                                <h3>Nutrition Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Computes macronutrient ratios and supplements matched to genomic profiles.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="longevity">
+                            <div class="agent-header">
+                                <i data-lucide="sparkles" class="text-cyan"></i>
+                                <h3>Longevity Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Formulates senescence prevention and epigenetic age acceleration rollback strategies.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="mental">
+                            <div class="agent-header">
+                                <i data-lucide="brain-circuit" class="text-purple"></i>
+                                <h3>Mental Health Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Evaluates sleep disruption files, heart rate variability, and stress response indexes.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="emergency">
+                            <div class="agent-header">
+                                <i data-lucide="alert-octagon" class="text-red"></i>
+                                <h3>Emergency Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Maintains persistent watch for immediate hypoxemia, AFib, or cardiovascular failures.</p>
+                        </div>
+                        <div class="agent-card glass-card" data-agent="coordination">
+                            <div class="agent-header">
+                                <i data-lucide="calendar" class="text-teal"></i>
+                                <h3>Care Coordination Agent</h3>
+                            </div>
+                            <p class="text-xs text-slate mt-xs">Schedules doctor checks, schedules diagnostic visits, and syncs medical history records.</p>
+                        </div>
+                    </div>
+                    <!-- Right: Live Log Console -->
+                    <div class="agent-console-wrapper">
+                        <div class="glass-card agent-console-card">
+                            <div class="console-header">
+                                <div class="terminal-circles">
+                                    <span class="t-red"></span>
+                                    <span class="t-yellow"></span>
+                                    <span class="t-green"></span>
+                                </div>
+                                <div class="console-title text-mono text-xxs">agent_collaboration_network_console_v2.0</div>
+                                <div class="console-status text-mono text-cyan"><span class="pulse-dot cyan"></span> LIVE BUS</div>
+                            </div>
+                            <div class="console-log-body text-mono" id="agent-console-log">
+                                <p class="log-line text-slate">[18:17:45] CMO Agent: Network initialization complete. Telemetry active.</p>
+                                <p class="log-line text-slate">[18:17:45] System: Secure agent vault active. Zero-Knowledge state verified.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. AI DOCTOR CONSULTATION -->
+        <section class="section triage-section" id="triage">
+            <div class="container">
+                <div class="section-tag text-cyan text-center">Physician Partnership</div>
+                <h2 class="section-title text-center">AI-Powered Physician Collaboration</h2>
+                <p class="section-desc text-center max-w-sm">
+                    LifeOS AI does not replace doctors. Our agents intake, simulate, and compile clinical summaries, leaving clinical decision-making to board-certified physicians.
+                </p>
+                <div class="consultation-stepper mt-lg">
+                    <div class="step-card glass-card active" data-step="1">
+                        <div class="step-num text-mono">STEP 01</div>
+                        <h3>AI Intake</h3>
+                        <p class="text-xs text-slate mt-xs">Symptom voice collection and automated demographic intake.</p>
+                    </div>
+                    <div class="step-card glass-card" data-step="2">
+                        <div class="step-num text-mono">STEP 02</div>
+                        <h3>Twin Analysis</h3>
+                        <p class="text-xs text-slate mt-xs">Health Twin simulates risk projections against bio-vault parameters.</p>
+                    </div>
+                    <div class="step-card glass-card" data-step="3">
+                        <div class="step-num text-mono">STEP 03</div>
+                        <h3>Agent Collaboration</h3>
+                        <p class="text-xs text-slate mt-xs">Genome, Diagnostic, and Research agents compile assessment profiles.</p>
+                    </div>
+                    <div class="step-card glass-card" data-step="4">
+                        <div class="step-num text-mono">STEP 04</div>
+                        <h3>Clinical Summary</h3>
+                        <p class="text-xs text-slate mt-xs">Structured, peer-reviewed clinical summaries rendered for review.</p>
+                    </div>
+                    <div class="step-card glass-card" data-step="5">
+                        <div class="step-num text-mono">STEP 05</div>
+                        <h3>Doctor Review</h3>
+                        <p class="text-xs text-slate mt-xs">Board-certified physician reviews summarized reports and diagnostics.</p>
+                    </div>
+                    <div class="step-card glass-card" data-step="6">
+                        <div class="step-num text-mono">STEP 06</div>
+                        <h3>Video Consultation</h3>
+                        <p class="text-xs text-slate mt-xs">Secure face-to-face physician consultation to align outcomes.</p>
+                    </div>
+                    <div class="step-card glass-card" data-step="7">
+                        <div class="step-num text-mono">STEP 07</div>
+                        <h3>Care Plan Dispatch</h3>
+                        <p class="text-xs text-slate mt-xs">Decrypted plan pushed directly to user's personalized daily timeline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. MEDICAL REPORT INTELLIGENCE -->
+        <section class="section report-section" id="report-analyzer">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="report-content">
+                        <div class="section-tag text-purple">Diagnostics Decoded</div>
+                        <h2 class="section-title">Understand Every Medical Report.</h2>
+                        <p class="section-desc">
+                            Translate laboratory paperwork into absolute clarity. LifeOS decodes standard blood panels, genetic readouts, MRI findings, and prescriptions to explain risks, trends, and compile custom questions for your doctor.
+                        </p>
+                        <div class="glass-card file-decoder-card mt-md">
+                            <h3 class="card-title text-mono text-xs">DIAGNOSTIC REPORT SELECTOR</h3>
+                            <div class="analyzer-files mt-sm">
+                                <button class="analyzer-file-btn active" data-report="blood">
+                                    <i data-lucide="file-digit" class="text-cyan"></i>
+                                    <div>
+                                        <span class="file-name">blood_panel_2026.pdf</span>
+                                        <span class="file-size">142 KB</span>
+                                    </div>
+                                </button>
+                                <button class="analyzer-file-btn" data-report="ecg">
+                                    <i data-lucide="heart" class="text-purple"></i>
+                                    <div>
+                                        <span class="file-name">cardio_ecg_scan.jpg</span>
+                                        <span class="file-size">1.2 MB</span>
+                                    </div>
+                                </button>
+                                <button class="analyzer-file-btn" data-report="genomics">
+                                    <i data-lucide="dna" class="text-teal"></i>
+                                    <div>
+                                        <span class="file-name">genomic_sequence.txt</span>
+                                        <span class="file-size">890 KB</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report-decoder-visual">
+                        <div class="glass-card decoder-screen-card">
+                            <div class="analyzer-screen">
+                                <div class="scanner-laser" id="scanner-laser"></div>
+                                <div class="report-document-preview" id="document-preview-text">
+                                    <pre class="text-xs text-mono text-slate">
+LifeOS Laboratory Services v2.1
+PATIENT ID: L-OS_99182
+DATE: 2026-06-15
+
+METABOLIC BIOMARKERS:
+------------------------------------------
+Glucose (Fasting)   | 98 mg/dL    | NORMAL
+Hemoglobin A1c      | 5.8 %       | ELEVATED (H)
+LDL Cholesterol     | 138 mg/dL   | HIGH (H)
+HDL Cholesterol     | 48 mg/dL    | NORMAL
+Triglycerides       | 162 mg/dL   | BORDERLINE HIGH (H)
+hs-CRP              | 2.1 mg/L    | MODERATE RISK (H)
+ApoB                | 112 mg/dL   | ELEVATED (H)
+                                    </pre>
+                                </div>
+                            </div>
+                            <div class="analyzer-results glass-card mt-sm" id="analyzer-results-panel">
+                                <div class="results-title text-mono text-cyan text-xs">AI DECODING CLASSIFICATION: COMPLETE</div>
+                                <div class="results-body mt-xs" id="analyzer-results-content">
+                                    <p class="text-xs"><strong>A1c Elevation (5.8%):</strong> Indication of pre-diabetic metabolic drift. LifeOS recommends macronutrient adjustments to mitigate path development.</p>
+                                    <p class="text-xs mt-xxs"><strong>ApoB Warning (112 mg/dL):</strong> High atherogenic lipid count. Cardiovascular risk factors are elevated; lipid clearance interventions recommended.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. AI HEALTH SEARCH ENGINE -->
+        <section class="section search-section" id="search-engine">
+            <div class="container text-center">
+                <div class="section-tag text-cyan">Personal Health Index Search</div>
+                <h2 class="section-title">Search Your Health.</h2>
+                <p class="section-desc max-w-sm">
+                    Query the entirety of your biological profile. LifeOS searches your genome, past blood panels, wearable history, and local research catalogs.
+                </p>
+                <div class="search-engine-wrapper max-w-md glass-card text-left mt-lg">
+                    <div class="search-input-row">
+                        <input type="text" id="health-search-input" class="health-search-input" placeholder="Ask: Why am I tired? or Why is my blood sugar increasing?...">
+                        <button class="btn btn-primary" id="btn-health-search"><i data-lucide="search"></i></button>
+                    </div>
+                    <div class="presets-row mt-sm">
+                        <span class="text-mono text-xxs text-slate mr-xs">PRESETS:</span>
+                        <button class="btn-search-preset text-xxs" data-query="tired">"Why am I tired?"</button>
+                        <button class="btn-search-preset text-xxs" data-query="sugar">"Why is my blood sugar increasing?"</button>
+                        <button class="btn-search-preset text-xxs" data-query="sleep">"Why am I sleeping poorly?"</button>
+                    </div>
+                    <div class="search-results-panel mt-md hide" id="search-results-panel">
+                        <div class="panel-header-sub text-mono text-purple">SEARCH DECODING REPORT</div>
+                        <div class="search-results-content text-xs text-slate mt-xs" id="search-results-content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. PREDICTIVE DISEASE SIMULATION -->
+        <section class="section simulator-section" id="simulator">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="simulator-content">
+                        <div class="section-tag text-cyan">Proactive Projections</div>
+                        <h2 class="section-title">See Your Future Health.</h2>
+                        <p class="section-desc">
+                            Drag the interactive sliders below to simulate different metabolic scenarios. Watch how improvements in body composition, sleep hours, activity levels, and methylation optimization can alter long-term disease risk.
+                        </p>
+                        <div class="simulator-controls glass-card text-mono text-xs">
+                            <div class="sim-row">
+                                <label for="sim-bodyfat">Body Composition (Fat %): <span id="val-bodyfat" class="text-cyan">30%</span></label>
+                                <input type="range" id="sim-bodyfat" min="10" max="40" value="30">
+                            </div>
+                            <div class="sim-row mt-sm">
+                                <label for="sim-sleep">Sleep Duration (Hours): <span id="val-sleep" class="text-cyan">6.0 hrs</span></label>
+                                <input type="range" id="sim-sleep" min="4" max="9" step="0.5" value="6.0">
+                            </div>
+                            <div class="sim-row mt-sm">
+                                <label for="sim-activity">Daily Activity (Steps): <span id="val-activity" class="text-cyan">4,000</span></label>
+                                <input type="range" id="sim-activity" min="2000" max="15000" step="500" value="4000">
+                            </div>
+                            <div class="sim-row mt-sm">
+                                <label for="sim-methyl">Methylation Supplementation: <span id="val-methyl" class="text-cyan">None</span></label>
+                                <input type="range" id="sim-methyl" min="0" max="1" value="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simulator-visualization">
+                        <div class="glass-card risk-display-card text-center">
+                            <h3 class="card-title text-mono text-xs">PROJECTED TYPE 2 DIABETES RISK</h3>
+                            <div class="risk-meter-wrapper mt-md">
+                                <div class="risk-percentage text-gradient text-mono" id="risk-score">72%</div>
+                                <div class="risk-label text-mono text-xxs text-red" id="risk-status">HIGH RISK PROFILE</div>
+                            </div>
+                            <div class="risk-graph-comparison mt-md">
+                                <svg class="risk-chart-svg" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" y="30" width="100" height="10" fill="rgba(255,255,255,0.05)" rx="2" />
+                                    <rect x="0" y="30" width="72" height="10" fill="#FF3B30" rx="2" id="risk-bar" />
+                                </svg>
+                            </div>
+                            <p class="text-xxs text-slate mt-sm">
+                                * Based on active baseline genomic variations and projected insulin strain cycles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CONTINUOUS BIOMARKER INTELLIGENCE -->
+        <section class="section biomarkers-section" id="biomarkers">
+            <div class="container">
+                <div class="text-center">
+                    <div class="section-tag text-cyan">Continuous Telemetry</div>
+                    <h2 class="section-title">Your Health Never Stops. Neither Does LifeOS.</h2>
+                    <p class="section-desc max-w-sm">
+                        Integrate smartwatches, continuous glucose monitors (CGM), smart rings, and home biosensors into one client-side decrypted biomarker panel.
+                    </p>
+                </div>
+                <div class="grid grid-4-col mt-lg">
+                    <!-- Heart Rate Card -->
+                    <div class="glass-card wearable-card">
+                        <div class="card-metric-header">
+                            <span class="metric-title text-mono text-xxs">HEART RATE</span>
+                            <i data-lucide="heart" class="text-red"></i>
+                        </div>
+                        <div class="metric-value-wrapper">
+                            <span class="metric-val" id="hr-value">62</span>
+                            <span class="metric-unit">BPM</span>
+                        </div>
+                        <div class="metric-chart-wrapper">
+                            <svg class="sparkline-svg" id="hr-sparkline" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="hrGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#FF3B30" stop-opacity="0.4"/>
+                                        <stop offset="100%" stop-color="#FF3B30" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path class="sparkline-path" stroke="#FF3B30" stroke-width="1.5" fill="none" d="M0,15 L10,12 L20,18 L30,14 L40,22 L50,10 L60,15 L70,8 L80,18 L90,13 L100,16" />
+                                <path class="sparkline-fill" fill="url(#hrGrad)" d="M0,15 L10,12 L20,18 L30,14 L40,22 L50,10 L60,15 L70,8 L80,18 L90,13 L100,16 L100,30 L0,30 Z" />
+                            </svg>
+                        </div>
+                        <span class="metric-footer text-xxs text-green"><i data-lucide="trending-down"></i> Resting avg 58 bpm</span>
+                    </div>
+
+                    <!-- CGM Card -->
+                    <div class="glass-card wearable-card">
+                        <div class="card-metric-header">
+                            <span class="metric-title text-mono text-xxs">GLUCOSE (CGM)</span>
+                            <i data-lucide="droplet" class="text-cyan"></i>
+                        </div>
+                        <div class="metric-value-wrapper">
+                            <span class="metric-val" id="glucose-value">94</span>
+                            <span class="metric-unit">MG/DL</span>
+                        </div>
+                        <div class="metric-chart-wrapper">
+                            <svg class="sparkline-svg" id="glucose-sparkline" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="glucGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.4"/>
+                                        <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path class="sparkline-path" stroke="#00E5FF" stroke-width="1.5" fill="none" d="M0,10 L15,12 L30,11 L45,15 L60,18 L75,13 L90,11 L100,10" />
+                                <path class="sparkline-fill" fill="url(#glucGrad)" d="M0,10 L15,12 L30,11 L45,15 L60,18 L75,13 L90,11 L100,10 L100,30 L0,30 Z" />
+                            </svg>
+                        </div>
+                        <span class="metric-footer text-xxs text-green"><i data-lucide="check-circle"></i> Metabolic Stability: High</span>
+                    </div>
+
+                    <!-- HRV Stress Card -->
+                    <div class="glass-card wearable-card">
+                        <div class="card-metric-header">
+                            <span class="metric-title text-mono text-xxs">HRV (STRESS)</span>
+                            <i data-lucide="activity-square" class="text-teal"></i>
+                        </div>
+                        <div class="metric-value-wrapper">
+                            <span class="metric-val" id="hrv-value">74</span>
+                            <span class="metric-unit">MS</span>
+                        </div>
+                        <div class="metric-chart-wrapper">
+                            <svg class="sparkline-svg" id="hrv-sparkline" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="hrvGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#00FFD1" stop-opacity="0.4"/>
+                                        <stop offset="100%" stop-color="#00FFD1" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path class="sparkline-path" stroke="#00FFD1" stroke-width="1.5" fill="none" d="M0,18 L15,15 L30,22 L45,14 L60,12 L75,8 L90,13 L100,11" />
+                                <path class="sparkline-fill" fill="url(#hrvGrad)" d="M0,18 L15,15 L30,22 L45,14 L60,12 L75,8 L90,13 L100,11 L100,30 L0,30 Z" />
+                            </svg>
+                        </div>
+                        <span class="metric-footer text-xxs text-green"><i data-lucide="activity"></i> Parasympathetic state active</span>
+                    </div>
+
+                    <!-- Sleep Recovery Card -->
+                    <div class="glass-card wearable-card">
+                        <div class="card-metric-header">
+                            <span class="metric-title text-mono text-xxs">RECOVERY (SLEEP)</span>
+                            <i data-lucide="moon" class="text-purple"></i>
+                        </div>
+                        <div class="metric-value-wrapper">
+                            <span class="metric-val">88</span>
+                            <span class="metric-unit">%</span>
+                        </div>
+                        <div class="metric-chart-wrapper">
+                            <svg class="sparkline-svg" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" y="10" width="10" height="20" fill="#9061F9" rx="2" />
+                                <rect x="20" y="5" width="10" height="25" fill="#00E5FF" rx="2" />
+                                <rect x="35" y="15" width="10" height="15" fill="#00FFD1" rx="2" />
+                                <rect x="50" y="8" width="10" height="22" fill="#9061F9" rx="2" />
+                                <rect x="65" y="12" width="10" height="18" fill="#00E5FF" rx="2" />
+                                <rect x="80" y="5" width="10" height="25" fill="#00FFD1" rx="2" />
+                            </svg>
+                        </div>
+                        <span class="metric-footer text-xxs text-purple"><i data-lucide="moon"></i> REM + Deep Sleep: 3.4 hrs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. GENOMIC INTELLIGENCE -->
+        <section class="section genomic-section" id="genomics">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="genomic-visual-container">
+                        <div class="glass-card genomic-card">
+                            <div class="dna-helix-container">
+                                <canvas id="dna-canvas" class="dna-canvas"></canvas>
+                            </div>
+                            <div class="genome-inspect-overlay text-center" id="genome-inspect-panel">
+                                <div class="text-mono text-cyan text-xs">SELECT BASE PAIR MARKER ON HELIX</div>
+                                <div class="inspect-data mt-sm hide" id="inspect-data-content">
+                                    <h4 class="inspect-gene text-mono text-purple">GENE: MTHFR (Methylation)</h4>
+                                    <p class="text-xxs text-slate mt-xxs">C677T Variant: Heterozygous mutation detected. Reduces folate processing efficiency by 30%. Preventive action: Active L-methylfolate supplementation recommended.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="genomic-content">
+                        <div class="section-tag text-purple">Sequence Decoding</div>
+                        <h2 class="section-title">Unlock The Intelligence Hidden In Your DNA.</h2>
+                        <p class="section-desc">
+                            Your genetic markers are blueprints, not destinies. LifeOS decodes your sequence to mapping risk thresholds, pharmacological compatibility panels, and specialized nutritional demands.
+                        </p>
+                        <div class="genomics-capabilities-grid">
+                            <div class="gc-item glass-card">
+                                <i data-lucide="dna" class="text-cyan"></i>
+                                <h4>Genetic Risk Maps</h4>
+                                <p class="text-xxs text-slate">Identify hereditary risk factors for cardiovascular, neurological, or metabolic systems.</p>
+                            </div>
+                            <div class="gc-item glass-card">
+                                <i data-lucide="shield-alert" class="text-purple"></i>
+                                <h4>Drug Compatibility</h4>
+                                <p class="text-xxs text-slate">Map hepatic clearance patterns (CYP450 variants) against standard prescriptions.</p>
+                            </div>
+                            <div class="gc-item glass-card">
+                                <i data-lucide="target" class="text-teal"></i>
+                                <h4>Hereditary Diagnostics</h4>
+                                <p class="text-xxs text-slate">Advanced risk screening arrays matching your sequence against global oncology profiles.</p>
+                            </div>
+                            <div class="gc-item glass-card">
+                                <i data-lucide="sliders" class="text-yellow"></i>
+                                <h4>Preventive Interventions</h4>
+                                <p class="text-xxs text-slate">Custom, DNA-tailored nutritional and methylation schedules to counter baseline gaps.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. PERSONALIZED NUTRITION ENGINE -->
+        <section class="section nutrition-section" id="nutrition">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="nutrition-content">
+                        <div class="section-tag text-cyan">Biology-Based Macro Optimization</div>
+                        <h2 class="section-title">Nutrition Designed For Your Biology.</h2>
+                        <p class="section-desc">
+                            Generic diet plans fail because they ignore biological variation. LifeOS AI cross-references DNA markers, current blood lipid markers, and daily glucose logs to compute personalized nutritional matrices.
+                        </p>
+                        <div class="nutrition-profile-card glass-card text-mono text-xs">
+                            <div class="dp-row"><span>Genomic Carb Response:</span> <span class="text-yellow">Moderate Sensitivity</span></div>
+                            <div class="dp-row"><span>Saturated Lipid Clearance:</span> <span class="text-red">Reduced (ApoE4 variant)</span></div>
+                            <div class="dp-row"><span>Systemic Allergen Predisposition:</span> <span class="text-cyan">Gluten (HLA-DQ8 positive)</span></div>
+                            <div class="dp-row"><span>Inflammatory Deficiencies:</span> <span class="text-purple">B9 Folate processing deficit</span></div>
+                        </div>
+                    </div>
+                    <div class="nutrition-interface-visual">
+                        <div class="glass-card daily-nutr-card">
+                            <h3 class="card-title text-mono text-xs text-center">BIOMARKER-LINKED MEAL PROFILE</h3>
+                            <div class="macro-ratios-chart mt-md">
+                                <svg viewBox="0 0 100 100" class="pie-chart-svg" width="120" height="120" style="margin: 0 auto; display: block;">
+                                    <circle cx="50" cy="50" r="40" fill="none" stroke="#00E5FF" stroke-width="12" stroke-dasharray="125 251" />
+                                    <circle cx="50" cy="50" r="40" fill="none" stroke="#9061F9" stroke-width="12" stroke-dasharray="88 251" stroke-dashoffset="-125" />
+                                    <circle cx="50" cy="50" r="40" fill="none" stroke="#00FFD1" stroke-width="12" stroke-dasharray="38 251" stroke-dashoffset="-213" />
+                                </svg>
+                            </div>
+                            <div class="macro-labels text-mono text-xxs mt-md">
+                                <div class="ml-item"><span class="ml-dot bg-cyan"></span> <span>35% Protein (Lean Amino Core)</span></div>
+                                <div class="ml-item"><span class="ml-dot bg-purple"></span> <span>35% Fiber-Buffered Complex Carbs</span></div>
+                                <div class="ml-item"><span class="ml-dot bg-teal"></span> <span>30% Omega-Dense Polyunsaturated Lipids</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. MEDICATION INTELLIGENCE -->
+        <section class="section medication-section" id="medication">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="med-visual">
+                        <div class="glass-card medication-profile-card">
+                            <h3 class="card-title text-mono text-xs text-center">PHARMACOGENOMIC ANALYSIS</h3>
+                            <div class="med-status-vault mt-md text-mono text-xs">
+                                <div class="mp-row"><span>Active Rx Profile:</span> <span>Metformin 500mg (Daily)</span></div>
+                                <div class="mp-row"><span>CYP2C19 Metabolizer Index:</span> <span class="text-yellow">Slow Pathway (*2 allele)</span></div>
+                                <div class="mp-row"><span>Drug Interaction Alert:</span> <span class="text-red">Avoid High-Dose Salicylates</span></div>
+                                <div class="mp-row"><span>Adherence Integrity:</span> <span class="text-green">98.2% Sync</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="medication-content">
+                        <div class="section-tag text-purple">Precision Pharmacogenomics</div>
+                        <h2 class="section-title">Smarter Medication Decisions.</h2>
+                        <p class="section-desc">
+                            Protect your liver and optimize drug efficacy. LifeOS monitors your active prescription compounds, calculates clearance half-lives based on genomic variations, and cross-references interactions to eliminate adverse drug events.
+                        </p>
+                        <div class="medication-benefits">
+                            <div class="mb-item"><i data-lucide="check-circle" class="text-purple"></i> <span>Automated drug interaction warnings.</span></div>
+                            <div class="mb-item"><i data-lucide="check-circle" class="text-purple"></i> <span>Dosing modifications calculated for liver enzyme patterns.</span></div>
+                            <div class="mb-item"><i data-lucide="check-circle" class="text-purple"></i> <span>Continuous adherence tracking logs.</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. MENTAL HEALTH INTELLIGENCE -->
+        <section class="section mental-section" id="mental">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="mental-content">
+                        <div class="section-tag text-cyan">Autonomic Tone Mapping</div>
+                        <h2 class="section-title">Mind And Body Connected.</h2>
+                        <p class="section-desc">
+                            Stress is biological, not just psychological. LifeOS maps your autonomic state in real-time by analyzing sleep quality indexes, heart rate variability (HRV), and vagal recovery tones.
+                        </p>
+                        <div class="mental-telemetry glass-card text-mono text-xs">
+                            <div class="mnp-row"><span>Stress Balance:</span> <span class="text-green">Low Autonomic Load (28%)</span></div>
+                            <div class="mnp-row"><span>HRV Delta (Nocturnal):</span> <span class="text-green">Normal Vagal Recovery (+12ms)</span></div>
+                            <div class="mnp-row"><span>Burnout Risk Index:</span> <span class="text-green">Stable Trajectory</span></div>
+                        </div>
+                    </div>
+                    <div class="mental-visual">
+                        <div class="glass-card stress-display-card text-center">
+                            <h3 class="card-title text-mono text-xs">AUTONOMIC TONE PROJECTION</h3>
+                            <div class="radial-gauge-wrapper mt-md">
+                                <svg viewBox="0 0 100 50" class="gauge-svg" width="160" style="margin: 0 auto; display: block;">
+                                    <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" stroke-linecap="round" />
+                                    <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="url(#logoGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="125" stroke-dashoffset="35" />
+                                </svg>
+                                <div class="gauge-value text-mono text-lg mt-xs text-gradient">28%</div>
+                                <div class="gauge-lbl text-mono text-xxs text-slate">AUTONOMIC STRESS LOAD</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. EMERGENCY AI -->
+        <section class="section emergency-section" id="emergency">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="emergency-visual">
+                        <div class="glass-card emergency-alert-card text-center">
+                            <div class="pulse-container">
+                                <div class="pulse-wave red-wave"></div>
+                                <div class="pulse-icon-inner bg-red"><i data-lucide="alert-octagon"></i></div>
+                            </div>
+                            <h3 class="text-mono mt-sm text-sm">EMERGENCY TELEMETRY PIPELINE</h3>
+                            <div class="emergency-flow-sim text-xxs text-mono mt-sm text-left">
+                                <div class="flow-line text-yellow">1. HRV ANOMALY DETECTED: HRV drops below 18ms under low stress</div>
+                                <div class="flow-line text-yellow">2. CONFIRMING MARKER: Ambient pulse rate exceeds 142 BPM at rest</div>
+                                <div class="flow-line text-red">3. TRIGGERING SHIELD: Dispatching local EMS alert + GPS coordinate</div>
+                                <div class="flow-line text-green">4. DOCTOR PROTOCOL ACTIVE: Clinician telemetry access key granted</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="emergency-content">
+                        <div class="section-tag text-red">Emergency Protocol</div>
+                        <h2 class="section-title">Always Watching.</h2>
+                        <p class="section-desc">
+                            Sleep, work, and travel with peace of mind. LifeOS operates continuous, zero-knowledge background watchers that screen for severe cardiorespiratory abnormalities, oxygen hypoxia, or stroke indices, instantly initiating doctor escalation.
+                        </p>
+                        <div class="emergency-benefits">
+                            <div class="eb-item"><i data-lucide="check-circle" class="text-red"></i> <span>Instant AFib and hypoxic drop detection.</span></div>
+                            <div class="eb-item"><i data-lucide="check-circle" class="text-red"></i> <span>Automated emergency notification to contacts.</span></div>
+                            <div class="eb-item"><i data-lucide="check-circle" class="text-red"></i> <span>Encrypted clinical profile packet ready for dispatch.</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 16. MEDICAL RESEARCH COPILOT -->
+        <section class="section research-copilot-section" id="research-copilot">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="copilot-content">
+                        <div class="section-tag text-purple">Clinical Knowledge Base</div>
+                        <h2 class="section-title">Connected To Global Medical Innovation</h2>
+                        <p class="section-desc">
+                            New clinical developments shouldn't take years to reach your care. The LifeOS Research Agent scans medical breakthroughs, clinical trials, and drug releases 24/7, notifying you the instant a discovery matches your Health Twin profile.
+                        </p>
+                        <div class="copilot-highlights">
+                            <div class="ch-item"><i data-lucide="check-circle" class="text-purple"></i> <span>Continuous scanning of PubMed, BioRxiv, and ClinicalTrials.gov.</span></div>
+                            <div class="ch-item"><i data-lucide="check-circle" class="text-purple"></i> <span>Instant matches mapping breakthroughs to your genetic variants.</span></div>
+                            <div class="ch-item"><i data-lucide="check-circle" class="text-purple"></i> <span>Patient-friendly translation summaries of scientific papers.</span></div>
+                        </div>
+                    </div>
+                    <div class="copilot-visual">
+                        <div class="glass-card copilot-feed-card">
+                            <h3 class="card-title text-mono text-xs text-center">BREAKTHROUGH SCANNER</h3>
+                            <div class="copilot-feed-lines mt-md text-mono text-xxs">
+                                <div class="feed-line border-cyan">
+                                    <span class="text-cyan">[MATCH]</span> <strong>NCT0681121:</strong> TCF7L2 Insulin Pathway study matches genome profile.
+                                </div>
+                                <div class="feed-line border-purple mt-sm">
+                                    <span class="text-purple">[MATCH]</span> <strong>MTHFR:</strong> New folate absorption trial completed. Supplements updated.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 17. AI DRUG DISCOVERY PLATFORM -->
+        <section class="section drug-discovery-section" id="drug-discovery">
+            <div class="container text-center">
+                <div class="section-tag text-cyan">Accelerating The Future Of Medicine</div>
+                <h2 class="section-title">AI Drug Discovery Platform</h2>
+                <p class="section-desc max-w-sm">
+                    In the long-term, LifeOS AI aims to accelerate precision medicine by matching clinical data pools with computational biochemistry.
+                </p>
+                <div class="grid grid-3-col mt-lg text-left">
+                    <div class="glass-card discovery-card">
+                        <i data-lucide="chevrons-right" class="text-cyan"></i>
+                        <h3 class="mt-xs">Personalized Therapies</h3>
+                        <p class="text-xs text-slate mt-xs">Modeling candidate compound binding configurations to patient-specific protein structures.</p>
+                    </div>
+                    <div class="glass-card discovery-card">
+                        <i data-lucide="git-merge" class="text-purple"></i>
+                        <h3 class="mt-xs">Drug Combinations</h3>
+                        <p class="text-xs text-slate mt-xs">Simulating chemical combination profiles to maximize therapeutic index and avoid interactions.</p>
+                    </div>
+                    <div class="glass-card discovery-card">
+                        <i data-lucide="database" class="text-teal"></i>
+                        <h3 class="mt-xs">Rare Disease Targets</h3>
+                        <p class="text-xs text-slate mt-xs">Mining phenotypic datasets to identify off-target pathways for orphan conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 18. LONGEVITY OPERATING SYSTEM -->
+        <section class="section longevity-section" id="longevity">
+            <div class="container">
+                <div class="grid grid-2-col gap-lg align-center">
+                    <div class="longevity-visual">
+                        <div class="glass-card longevity-score-card text-center">
+                            <h3 class="card-title text-mono text-xs">EPIGENETIC AGE SIMULATION</h3>
+                            <div class="longevity-score-display text-gradient text-mono mt-md">-4.2 Years</div>
+                            <div class="longevity-label text-mono text-xxs text-green mt-xs">CELLULAR ACCELERATION PROFILE: SLOWED</div>
+                        </div>
+                    </div>
+                    <div class="longevity-content">
+                        <div class="section-tag text-cyan">Extend Healthspan</div>
+                        <h2 class="section-title">Longevity Operating System.</h2>
+                        <p class="section-desc">
+                            LifeOS focuses on maximizing healthy, high-performance years. By managing sleep architecture, caloric thresholds, physical stress recovery, and biomarker degradation rates, the platform targets systematic cell preservation.
+                        </p>
+                        <div class="longevity-pillars text-xs text-mono">
+                            <div class="lp-item"><i data-lucide="check-circle" class="text-cyan"></i> <span>DNA methylation tracking (Horvath Clock).</span></div>
+                            <div class="lp-item"><i data-lucide="check-circle" class="text-cyan"></i> <span>Mitochondrial performance optimization panels.</span></div>
+                            <div class="lp-item"><i data-lucide="check-circle" class="text-cyan"></i> <span>Nocturnal recovery markers and HRV tuning schedules.</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 19. PRIVACY & TRUST -->
+        <section class="section privacy-section" id="privacy">
+            <div class="container text-center">
+                <div class="section-tag text-cyan">Security Envelope</div>
+                <h2 class="section-title">Your Health Data. Fully Protected.</h2>
+                <p class="section-desc max-w-sm">
+                    Medical data is a fundamental human right. LifeOS is built on a zero-knowledge cryptographic envelope. Your profiles are fully encrypted and only decrypted on-client.
+                </p>
+                <div class="grid grid-3-col mt-lg text-left">
+                    <div class="glass-card security-card">
+                        <div class="sec-icon"><i data-lucide="key" class="text-cyan"></i></div>
+                        <h3 class="mt-xs">End-to-End Encryption</h3>
+                        <p class="text-xs text-slate mt-xs">Decryption keys are held strictly on-client. Zero platform visibility into clinical raw parameters.</p>
+                    </div>
+                    <div class="glass-card security-card">
+                        <div class="sec-icon"><i data-lucide="shield-check" class="text-purple"></i></div>
+                        <h3 class="mt-xs">User-Controlled Permissions</h3>
+                        <p class="text-xs text-slate mt-xs">Grant or revoke physician read privileges instantly with a single cryptographic key.</p>
+                    </div>
+                    <div class="glass-card security-card">
+                        <div class="sec-icon"><i data-lucide="server" class="text-teal"></i></div>
+                        <h3 class="mt-xs">HIPAA/GDPR Compliance</h3>
+                        <p class="text-xs text-slate mt-xs">Isolated node computing parameters that exceed international standards for medical storage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 20. GLOBAL IMPACT -->
+        <section class="section global-impact-section" id="global-impact">
+            <div class="container text-center">
+                <div class="section-tag text-purple">Human Progress</div>
+                <h2 class="section-title">The Operating System For Human Health</h2>
+                <p class="section-desc max-w-sm">
+                    Our long-term target is global health optimization. Every person on Earth deserves predictive, preventive, and precision care. LifeOS AI connects the dots between patients, physicians, diagnostics, and emerging therapies.
+                </p>
+                <div class="global-visual mt-lg">
+                    <div class="glass-card global-map-card">
+                        <div class="pulse-ring-map" style="top: 30%; left: 40%;"></div>
+                        <div class="pulse-ring-map" style="top: 50%; left: 60%;"></div>
+                        <div class="pulse-ring-map" style="top: 45%; left: 20%;"></div>
+                        <div class="map-label text-mono text-xxs text-cyan">GLOBAL SCALE BIOMARKER VAULTS ACTIVE: 24,890</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 21. INVESTOR SECTION -->
+        <section class="section investor-section" id="investors">
+            <div class="container">
+                <div class="glass-card investor-card-bg">
+                    <div class="grid grid-2-col gap-lg align-center">
+                        <div class="investor-content">
+                            <div class="section-tag text-cyan">Investment Protocol</div>
+                            <h2 class="section-title">Building A Trillion-Dollar Healthcare Platform.</h2>
+                            <p class="section-desc">
+                                Healthcare represents one-tenth of global economic TAM, collapsing under reactive costs. LifeOS AI connects the entire network—artificial intelligence, personal genomics, wearables, digital twins, and clinicians—into one highly scalable, autonomous subscription infrastructure.
+                            </p>
+                        </div>
+                        <div class="investor-stats-grid">
+                            <div class="market-stat glass-card text-center">
+                                <div class="stat-big-text text-gradient text-mono">$10T+</div>
+                                <div class="stat-small-label text-mono text-xxs text-slate">GLOBAL HEALTH TAM BY 2030</div>
+                            </div>
+                            <div class="market-stat glass-card text-center">
+                                <div class="stat-big-text text-gradient text-mono">82%</div>
+                                <div class="stat-small-label text-mono text-xxs text-slate">CHRONIC PATHOLOGIES PREVENTABLE</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 22. FINAL CALL TO ACTION -->
+        <section class="section early-access-section" id="early-access">
+            <div class="container">
+                <div class="glass-card early-access-card text-center">
+                    <h2 class="section-title">The Future Of Healthcare Starts Here.</h2>
+                    <p class="section-desc max-w-sm mt-xs">
+                        Join patients, board-certified physicians, and computational biologists building the next paradigm of human health. Secure your priority spot and receive instant multi-channel onboarding dispatch.
+                    </p>
+                    
+                    <div class="early-access-form-wrapper mt-lg text-left" style="max-width: 600px; margin: 24px auto 0 auto;">
+                        <form id="early-access-form" class="cta-form">
+                            <!-- Hidden Honeypot Field -->
+                            <input type="text" name="b_honeypot" id="form-honeypot" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                                <div class="input-group">
+                                    <label class="text-xxs text-slate block mb-xxs font-mono">Full Name *</label>
+                                    <input type="text" placeholder="e.g. Alex Mercer" class="form-input" required id="form-name">
+                                </div>
+                                <div class="input-group">
+                                    <label class="text-xxs text-slate block mb-xxs font-mono">Email Address *</label>
+                                    <input type="email" placeholder="alex.mercer@example.com" class="form-input" required id="form-email">
+                                </div>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns:120px 1fr; gap:12px; margin-top:12px;">
+                                <div class="input-group">
+                                    <label class="text-xxs text-slate block mb-xxs font-mono">Code *</label>
+                                    <select class="form-select" id="form-country-code" style="padding:10px 6px; font-size:0.8rem;">
+                                        <option value="+1">+1 (US/CA)</option>
+                                        <option value="+44">+44 (UK)</option>
+                                        <option value="+91">+91 (IN)</option>
+                                        <option value="+61">+61 (AU)</option>
+                                        <option value="+49">+49 (DE)</option>
+                                        <option value="+33">+33 (FR)</option>
+                                        <option value="+81">+81 (JP)</option>
+                                        <option value="+971">+971 (UAE)</option>
+                                        <option value="+41">+41 (CH)</option>
+                                        <option value="+65">+65 (SG)</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label class="text-xxs text-slate block mb-xxs font-mono">Mobile Number (Required for WhatsApp) *</label>
+                                    <input type="tel" placeholder="(555) 234-5678" class="form-input" required id="form-phone">
+                                </div>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px;">
+                                <div class="input-group">
+                                    <label class="text-xxs text-slate block mb-xxs font-mono">Country *</label>
+                                    <select class="form-select" id="form-country" required>
+                                        <option value="United States">United States</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="India">India</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="France">France</option>
+                                        <option value="Japan">Japan</option>
+                                        <option value="United Arab Emirates">United Arab Emirates</option>
+                                        <option value="Switzerland">Switzerland</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="Other">Other Country</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label class="text-xxs text-slate block mb-xxs font-mono">Target Role *</label>
+                                    <select class="form-select" id="form-role" required>
+                                        <option value="Personnel" selected>Personnel (Personnel Wellness System)</option>
+                                        <option value="Patient">Patient (Early Access Vault)</option>
+                                        <option value="Doctor">Doctor / Board-Certified Physician</option>
+                                        <option value="Healthcare Provider">Healthcare Provider / Hospital Network</option>
+                                        <option value="Researcher">Researcher / Bioinformatician</option>
+                                        <option value="Partner">Strategic Enterprise Partner</option>
+                                        <option value="Investor">Investor / Venture Partner</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-group mt-sm">
+                                <label class="text-xxs text-slate block mb-xxs font-mono">Organization / Affiliation (Optional)</label>
+                                <input type="text" placeholder="e.g. Stanford Health / BioGen Systems" class="form-input" id="form-organization">
+                            </div>
+
+                            <div class="input-group mt-sm">
+                                <label class="text-xxs text-slate block mb-xxs font-mono">Clinical Note / Message (Optional)</label>
+                                <textarea placeholder="Share your clinical focus, research interests, or onboarding objectives..." class="form-input" id="form-message" style="height:70px; resize:vertical;"></textarea>
+                            </div>
+
+                            <!-- Consent Options -->
+                            <div style="display:flex; flex-direction:column; gap:8px; margin-top:14px; background:rgba(0,0,0,0.2); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                <label class="flex align-center gap-xs text-xxs text-white" style="display:flex; align-items:flex-start; gap:8px; cursor:pointer;">
+                                    <input type="checkbox" id="form-consent-privacy" required style="margin-top:2px; accent-color:var(--accent-teal);">
+                                    <span>I consent to the <a href="#privacy" class="text-teal underline">Privacy Policy</a> & Terms of Protocol. Data is protected with TLS 1.3 zero-knowledge client encryption. *</span>
+                                </label>
+                                <label class="flex align-center gap-xs text-xxs text-white" style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+                                    <input type="checkbox" id="form-consent-email" checked style="accent-color:var(--accent-teal);">
+                                    <span>Receive branded welcome email, priority review timeline & product dispatches.</span>
+                                </label>
+                                <label class="flex align-center gap-xs text-xxs text-white" style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+                                    <input type="checkbox" id="form-consent-whatsapp" checked style="accent-color:var(--accent-teal);">
+                                    <span>Receive instant WhatsApp confirmation & onboarding updates on my mobile number.</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-cyan btn-full mt-md" id="submit-early-access" style="font-size:0.9rem; padding:12px;">Submit Registration Protocol</button>
+                        </form>
+                        <div class="form-feedback-message hide" id="form-feedback" style="margin-top:16px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo-wrapper">
+                        <span class="logo-text">Life<span class="text-accent">OS</span><span class="text-sub">AI</span></span>
+                    </a>
+                    <p class="footer-desc text-xs text-slate mt-sm">
+                        Building the world's first AI-powered Autonomous Healthcare Operating System.
+                    </p>
+                    <p class="footer-tagline-text mt-sm text-mono text-cyan text-xs">
+                        Predict. Prevent. Personalize.
+                    </p>
+                </div>
+                <div class="footer-nav-col">
+                    <h4 class="text-xs text-mono text-cyan">PLATFORM</h4>
+                    <ul class="footer-links">
+                        <li><a href="#digital-twin">Health Twin</a></li>
+                        <li><a href="#agent-ecosystem">AI Agents</a></li>
+                        <li><a href="#triage">AI Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-col">
+                    <h4 class="text-xs text-mono text-purple">RESEARCH</h4>
+                    <ul class="footer-links">
+                        <li><a href="#genomics">Genomics</a></li>
+                        <li><a href="#report-analyzer">Report Decoder</a></li>
+                        <li><a href="#privacy">Privacy & Trust</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-col">
+                    <h4 class="text-xs text-mono text-teal">PARTNERS</h4>
+                    <ul class="footer-links">
+                        <li><a href="#early-access">Providers</a></li>
+                        <li><a href="#investors">Investors</a></li>
+                        <li><a href="#early-access">Contact Protocol</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom mt-lg">
+                <p class="text-xxs text-slate">
+                    © 2026 LifeOS AI Inc. Zero-Knowledge client-side encrypted connection active. Clinical summaries verified by board-certified specialists.
+                </p>
+                <div class="footer-status-tag">
+                    <span class="pulse-dot green"></span> Network Secure (TLS 1.3)
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div> <!-- /#landing-page-wrapper -->
+
+    <!-- REGISTRATION MODAL -->
+    <div id="registration-modal" class="modal-overlay hide">
+        <div class="modal-content-card" style="width:620px">
+            <div class="modal-header-pane">
+                <h3 class="text-mono text-cyan" style="font-size:1.1rem;display:flex;align-items:center;gap:8px"><span class="badge-dot"></span> ONBOARDING PROTOCOL</h3>
+                <button class="close-modal-btn" id="close-reg-modal"><i data-lucide="x"></i></button>
+            </div>
+            <!-- Wizard Progress Bar -->
+            <div style="padding:0 32px;padding-top:20px">
+                <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                    <span class="text-xxs text-mono wiz-step-label active" data-wstep="1">1 · IDENTITY</span>
+                    <span class="text-xxs text-mono wiz-step-label" data-wstep="2">2 · CONSENT</span>
+                    <span class="text-xxs text-mono wiz-step-label" data-wstep="3">3 · HEALTH TWIN</span>
+                    <span class="text-xxs text-mono wiz-step-label" data-wstep="4">4 · DATA SOURCES</span>
+                </div>
+                <div class="wiz-progress-track"><div class="wiz-progress-fill" id="wiz-progress-fill" style="width:25%"></div></div>
+            </div>
+            <div class="modal-body-pane" id="wizard-body">
+                <!-- Phase 1: Identity -->
+                <div class="wiz-phase" id="wiz-phase-1">
+                    <div class="form-row"><label class="form-label-txt">Full Name</label><input type="text" id="reg-name" class="form-textbox" required placeholder="Alex Mercer"></div>
+                    <div class="form-row-grid">
+                        <div class="form-row"><label class="form-label-txt">Age</label><input type="number" id="reg-age" class="form-textbox" required placeholder="32" min="1" max="120"></div>
+                        <div class="form-row"><label class="form-label-txt">Gender</label><select id="reg-gender" class="db-role-select" style="padding:11px"><option value="male">Male</option><option value="female">Female</option><option value="non-binary">Non-Binary</option></select></div>
+                    </div>
+                    <div class="form-row"><label class="form-label-txt">Country</label><input type="text" id="reg-country" class="form-textbox" required placeholder="United States"></div>
+                    <div class="form-row"><label class="form-label-txt">Email Address</label><input type="email" id="reg-email" class="form-textbox" required placeholder="alex.mercer@lifeos.ai"></div>
+                    <div class="form-row"><label class="form-label-txt">Phone Number</label><input type="tel" id="reg-phone" class="form-textbox" placeholder="+1 (555) 234-5678"></div>
+                    <button type="button" class="btn btn-cyan btn-full mt-sm" id="wiz-next-1">Verify Identity & Continue →</button>
+                </div>
+                <!-- Phase 2: Medical Consent -->
+                <div class="wiz-phase hide" id="wiz-phase-2">
+                    <div class="glass-card" style="padding:16px;margin-bottom:16px;border-color:rgba(0,229,255,0.15)">
+                        <h4 class="text-mono text-xs text-cyan" style="margin-bottom:8px">HIPAA AUTHORIZATION</h4>
+                        <p class="text-xxs" style="color:var(--text-silver);line-height:1.6">I authorize LifeOS AI to collect, process, and store my health data including medical records, genomic data, wearable signals, and biometric information in an encrypted Health Vault for the purpose of personalized health intelligence.</p>
+                        <label class="chk-interest-label" style="margin-top:10px"><input type="checkbox" id="consent-hipaa"> I accept the HIPAA data processing agreement</label>
+                    </div>
+                    <div class="glass-card" style="padding:16px;margin-bottom:16px;border-color:rgba(144,97,249,0.15)">
+                        <h4 class="text-mono text-xs text-purple" style="margin-bottom:8px">DATA SHARING CONSENT</h4>
+                        <p class="text-xxs" style="color:var(--text-silver);line-height:1.6">Your data may be shared with treating physicians you explicitly connect with. Anonymized data may contribute to research improvements.</p>
+                        <label class="chk-interest-label" style="margin-top:10px"><input type="checkbox" id="consent-sharing"> I consent to physician data sharing</label>
+                    </div>
+                    <div class="form-row"><label class="form-label-txt">Emergency Contact Name</label><input type="text" id="reg-emergency-name" class="form-textbox" placeholder="Sarah Mercer"></div>
+                    <div class="form-row"><label class="form-label-txt">Emergency Contact Phone</label><input type="tel" id="reg-emergency-phone" class="form-textbox" placeholder="+1 (555) 987-6543"></div>
+                    <div style="display:flex;gap:12px;margin-top:16px">
+                        <button type="button" class="btn btn-outline" id="wiz-back-2" style="flex:1">← Back</button>
+                        <button type="button" class="btn btn-cyan" id="wiz-next-2" style="flex:2">Accept & Continue →</button>
+                    </div>
+                </div>
+                <!-- Phase 3: Health Twin Creation -->
+                <div class="wiz-phase hide" id="wiz-phase-3">
+                    <p class="text-xxs" style="color:var(--text-slate);margin-bottom:14px">Build your initial Health Twin by providing baseline health data.</p>
+                    <div class="form-row-grid">
+                        <div class="form-row"><label class="form-label-txt">Height (cm)</label><input type="number" id="reg-height" class="form-textbox" placeholder="178"></div>
+                        <div class="form-row"><label class="form-label-txt">Weight (kg)</label><input type="number" id="reg-weight" class="form-textbox" placeholder="76"></div>
+                    </div>
+                    <div class="form-row"><label class="form-label-txt">Known Medical Conditions</label><input type="text" id="reg-conditions" class="form-textbox" placeholder="Pre-diabetes, Hypertension (or None)"></div>
+                    <div class="form-row"><label class="form-label-txt">Current Medications</label><input type="text" id="reg-meds" class="form-textbox" placeholder="Metformin 500mg, Methylfolate 400mcg (or None)"></div>
+                    <div class="form-row"><label class="form-label-txt">Family Medical History</label><input type="text" id="reg-family" class="form-textbox" placeholder="Father: Heart disease, Mother: Type 2 Diabetes"></div>
+                    <div class="form-row-grid">
+                        <div class="form-row"><label class="form-label-txt">Exercise (hrs/wk)</label><input type="number" id="reg-exercise" class="form-textbox" placeholder="4" min="0" max="40"></div>
+                        <div class="form-row"><label class="form-label-txt">Sleep (hrs/night)</label><input type="number" id="reg-sleep" class="form-textbox" placeholder="7" min="0" max="16" step="0.5"></div>
+                    </div>
+                    <div class="form-row"><label class="form-label-txt">Diet Type</label><select id="reg-diet" class="db-role-select" style="padding:11px"><option>Standard Western</option><option>Mediterranean</option><option>Low-Carb/Keto</option><option>Vegetarian</option><option>Vegan</option><option>Paleo</option></select></div>
+                    <div style="display:flex;gap:12px;margin-top:16px">
+                        <button type="button" class="btn btn-outline" id="wiz-back-3" style="flex:1">← Back</button>
+                        <button type="button" class="btn btn-cyan" id="wiz-next-3" style="flex:2">Create Health Twin v1.0 →</button>
+                    </div>
+                </div>
+                <!-- Phase 4: Data Sources -->
+                <div class="wiz-phase hide" id="wiz-phase-4">
+                    <p class="text-xxs" style="color:var(--text-slate);margin-bottom:14px">Connect data sources to enrich your Health Twin. You can skip and add later.</p>
+                    <div class="glass-card" style="padding:16px;margin-bottom:12px;cursor:pointer;border-color:rgba(0,229,255,0.1)" id="wiz-src-reports">
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <i data-lucide="file-text" style="width:24px;color:var(--accent-cyan)"></i>
+                            <div><div class="text-xs" style="color:var(--text-white)">Upload Medical Reports</div><div class="text-xxs" style="color:var(--text-slate)">Blood panels, ECG, MRI, CT scans, prescriptions</div></div>
+                            <span class="text-xxs text-mono" style="color:var(--text-slate);margin-left:auto">OPTIONAL</span>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="padding:16px;margin-bottom:12px;cursor:pointer;border-color:rgba(144,97,249,0.1)" id="wiz-src-dna">
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <i data-lucide="dna" style="width:24px;color:var(--accent-purple)"></i>
+                            <div><div class="text-xs" style="color:var(--text-white)">Upload DNA / Genomic Data</div><div class="text-xxs" style="color:var(--text-slate)">23andMe, AncestryDNA, whole genome sequencing</div></div>
+                            <span class="text-xxs text-mono" style="color:var(--text-slate);margin-left:auto">OPTIONAL</span>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="padding:16px;margin-bottom:12px;cursor:pointer;border-color:rgba(0,255,209,0.1)" id="wiz-src-wearable">
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <i data-lucide="watch" style="width:24px;color:var(--accent-teal)"></i>
+                            <div><div class="text-xs" style="color:var(--text-white)">Connect Wearable Device</div><div class="text-xxs" style="color:var(--text-slate)">Apple Watch, Oura Ring, Dexcom CGM, Withings</div></div>
+                            <span class="text-xxs text-mono" style="color:var(--text-slate);margin-left:auto">OPTIONAL</span>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:12px;margin-top:16px">
+                        <button type="button" class="btn btn-outline" id="wiz-back-4" style="flex:1">← Back</button>
+                        <button type="button" class="btn btn-cyan" id="wiz-finish" style="flex:2">Launch LifeOS AI →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WEARABLE CONNECTION MODAL -->
+    <div id="wearable-connect-modal" class="modal-overlay hide">
+        <div class="modal-content-card" style="width:500px">
+            <div class="modal-header-pane">
+                <h3 class="text-mono text-teal" style="font-size:1.1rem;display:flex;align-items:center;gap:8px"><span class="badge-dot" style="background-color: var(--accent-teal);"></span> WEARABLE PAIRING GATEWAY</h3>
+                <button class="close-modal-btn" id="close-wearable-modal"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body-pane" id="wearable-modal-body">
+                <div id="wearable-select-phase">
+                    <p class="text-xxs text-slate mb-md">Select a device below to establish secure local BLE telemetry connection.</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                        <div class="glass-card wearable-device-card" data-device="Apple Watch" style="padding:16px;cursor:pointer;text-align:center;transition:var(--transition-smooth);">
+                            <i data-lucide="watch" class="text-cyan" style="width:32px;height:32px;margin:0 auto 8px auto;"></i>
+                            <div class="text-xs text-white font-bold">Apple Watch</div>
+                            <span class="text-mono text-xxs text-slate mt-xxs block">Series 9 / Ultra</span>
+                        </div>
+                        <div class="glass-card wearable-device-card" data-device="Oura Ring" style="padding:16px;cursor:pointer;text-align:center;transition:var(--transition-smooth);">
+                            <i data-lucide="circle" class="text-purple" style="width:32px;height:32px;margin:0 auto 8px auto;"></i>
+                            <div class="text-xs text-white font-bold">Oura Ring</div>
+                            <span class="text-mono text-xxs text-slate mt-xxs block">Gen 3 Horizon</span>
+                        </div>
+                        <div class="glass-card wearable-device-card" data-device="Dexcom CGM" style="padding:16px;cursor:pointer;text-align:center;transition:var(--transition-smooth);">
+                            <i data-lucide="activity" class="text-teal" style="width:32px;height:32px;margin:0 auto 8px auto;"></i>
+                            <div class="text-xs text-white font-bold">Dexcom G7 CGM</div>
+                            <span class="text-mono text-xxs text-slate mt-xxs block">Subcutaneous CGM</span>
+                        </div>
+                        <div class="glass-card wearable-device-card" data-device="Withings Scale" style="padding:16px;cursor:pointer;text-align:center;transition:var(--transition-smooth);">
+                            <i data-lucide="scale" class="text-yellow" style="width:32px;height:32px;margin:0 auto 8px auto;"></i>
+                            <div class="text-xs text-white font-bold">Withings Scale</div>
+                            <span class="text-mono text-xxs text-slate mt-xxs block">Body Scan telemetry</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="wearable-pairing-phase" class="hide text-center" style="padding:20px 0;">
+                    <div class="pairing-scanner-circle" style="margin: 0 auto 20px auto; width:80px; height:80px; position:relative; display:flex; align-items:center; justify-content:center; border-radius:50%; border:2px solid rgba(0,255,209,0.1);">
+                        <div class="scanning-circle" style="position:absolute; width:100%; height:100%; border-radius:50%; border:2px solid var(--accent-teal); animation:scanPulse 1.5s infinite;"></div>
+                        <i data-lucide="bluetooth" class="text-teal animate-pulse" style="width:36px;height:36px;z-index:5;"></i>
+                    </div>
+                    <h4 class="text-mono text-white text-xs" id="pairing-status-title">SEARCHING FOR DEVICE BIOMETRIC SIGNALS...</h4>
+                    <p class="text-xxs text-slate mt-xs" id="pairing-status-desc">Establishing local zero-knowledge BLE pairing credentials.</p>
+                    <div style="width:100%; height:4px; background:rgba(255,255,255,0.05); border-radius:10px; overflow:hidden; margin-top:20px;">
+                        <div id="pairing-progress-bar" style="width:0%; height:100%; background:var(--accent-teal); transition:width 0.1s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DASHBOARD SHELL -->
+    <div id="dashboard-shell" class="dashboard-shell hide">
+        <!-- Backdrop Overlay for Mobile Navigation Drawer -->
+        <div class="db-sidebar-overlay" id="db-sidebar-overlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="db-sidebar" id="db-sidebar">
+            <div class="db-sidebar-header-row">
+                <div class="db-logo-section">
+                    <a href="#" class="logo-wrapper">
+                        <svg class="logo-svg" viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logoGradDb" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#00E5FF" />
+                                    <stop offset="50%" stop-color="#00FFD1" />
+                                    <stop offset="100%" stop-color="#9061F9" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="url(#logoGradDb)" stroke-width="4" stroke-dasharray="10 5" class="logo-circle-outer" />
+                            <path d="M40 35 C40 35, 45 42, 50 50 C55 58, 60 65, 60 65 M60 35 C60 35, 55 42, 50 50 C45 58, 40 65, 40 65" stroke="url(#logoGradDb)" stroke-width="5" stroke-linecap="round" class="logo-dna" />
+                            <circle cx="50" cy="50" r="6" fill="#00FFD1" />
+                        </svg>
+                        <span class="logo-text" style="font-size: 1.15rem;">Life<span class="text-accent">OS</span><span class="text-sub">AI</span></span>
+                    </a>
+                </div>
+                <button class="db-sidebar-close" id="btn-db-sidebar-close" aria-label="Close navigation drawer">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <div class="db-role-selector-wrapper">
+                <span class="db-role-label">OPERATING STATE</span>
+                <select class="db-role-select" id="role-selector">
+                    <option value="patient">Patient Portal</option>
+                    <option value="welfare_officer">Welfare Officer Desk</option>
+                    <option value="commander">Unit Commander Desk</option>
+                    <option value="doctor">Doctor Portal</option>
+                    <option value="researcher">Researcher Hub</option>
+                    <option value="provider">Provider Portal</option>
+                    <option value="investor">Investor Relations</option>
+                    <option value="admin">Admin Center</option>
+                </select>
+            </div>
+
+            <nav class="db-nav" id="sidebar-nav-links">
+                <!-- Navigation links will be injected dynamically by JS based on selected role -->
+            </nav>
+
+            <div class="db-sidebar-footer">
+                <a href="#" class="db-nav-item" id="btn-exit-dashboard">
+                    <i data-lucide="log-out" class="text-red"></i>
+                    <span class="text-red">Exit LifeOS</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Workspace -->
+        <main class="db-workspace">
+            <header class="db-topbar">
+                <div class="db-topbar-left">
+                    <button class="db-menu-toggle" id="btn-db-mobile-menu" aria-label="Open navigation drawer">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div class="db-connection-status text-mono text-cyan">
+                        <span class="pulse-dot green"></span> <span class="db-status-text">SECURE VAULT ACCESS ACTIVE</span>
+                    </div>
+                </div>
+                <div class="db-topbar-right">
+                    <button class="notification-hub-trigger" id="btn-notifications">
+                        <i data-lucide="bell"></i>
+                        <span class="notification-badge" id="nav-notify-count">2</span>
+                    </button>
+                    <div class="notification-panel hide" id="notification-hub-panel">
+                        <div class="notification-header">
+                            <h4 class="text-mono text-xs">NOTIFICATIONS</h4>
+                            <button class="btn btn-secondary btn-sm" id="btn-clear-notify" style="padding: 2px 8px; font-size: 0.65rem;">Clear All</button>
+                        </div>
+                        <div class="notification-list" id="notification-hub-list">
+                            <!-- Notifications will be injected by JS -->
+                        </div>
+                    </div>
+                    <div class="glass-card flex align-center gap-sm p-0" style="background: none; border: none; box-shadow: none;">
+                        <div class="text-right">
+                            <span id="user-display-name" class="text-mono text-white text-xs" style="display: block; font-weight: 600;">Alex Mercer</span>
+                            <span id="user-display-email" class="text-mono text-slate text-xxs" style="display: block;">alex.mercer@lifeos.ai</span>
+                        </div>
+                        <div class="user-avatar" style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--bg-darkest); font-size: 0.85rem;" id="user-avatar-initials">
+                            AM
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="db-main-pane" id="dashboard-view-pane">
+                <!-- Dynamic workspace views will be injected here by js/dashboard.js -->
+            </section>
+        </main>
+    </div>
+
+    <!-- App Logic script -->
+    <script src="js/app.js?v=2.3.0"></script>
+    <script src="js/personnel_wellness_api.js?v=2.3.0"></script>
+    <script src="js/device_integration.js?v=1.0.0"></script>
+    <script src="js/dashboard.js?v=2.3.0"></script>
+    <script>
+        // Initialize Lucide icons on page load
+        lucide.createIcons();
+    </script>
+</body>
+</html>
