@@ -973,12 +973,61 @@ ACTN3 (rs1815739)   | Genotype RR | POWER ATHLETE VARIANT
                     submitBtn.textContent = submitBtn.dataset.originalText || "Submit Registration Protocol";
                 }
                 formFeedback.className = 'form-feedback-message error';
+                const isDuplicate = err.message && (err.message.toLowerCase().includes('already exists') || err.message.toLowerCase().includes('duplicate'));
                 formFeedback.innerHTML = `
-                    <div class="glass-card mt-sm" style="padding:12px; background:rgba(255,59,48,0.08); border:1px solid rgba(255,59,48,0.3); text-align:left; color:#ff6b6b; font-size:0.75rem;">
-                        <strong><i data-lucide="alert-triangle"></i> Registration Notice:</strong> ${err.message}
+                    <div class="glass-card mt-sm" style="padding:16px; background:rgba(255,59,48,0.08); border:1px solid rgba(255,59,48,0.3); text-align:left; color:#ff6b6b; font-size:0.75rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                            <div>
+                                <strong><i data-lucide="alert-triangle"></i> Registration Notice:</strong> ${err.message}
+                            </div>
+                            ${isDuplicate ? `
+                                <button type="button" class="btn btn-cyan btn-xs" id="btn-auto-signin" style="padding:6px 12px; font-size:0.75rem; background:linear-gradient(135deg, #00E5FF, #00FFD1); color:#000; font-weight:bold; border:none; border-radius:4px; cursor:pointer;">
+                                    Sign In As ${email} &rarr;
+                                </button>
+                            ` : ''}
+                        </div>
                     </div>
                 `;
                 if (window.lucide) window.lucide.createIcons();
+
+                if (isDuplicate) {
+                    const signInBtn = document.getElementById('btn-auto-signin');
+                    if (signInBtn) {
+                        signInBtn.addEventListener('click', async () => {
+                            signInBtn.disabled = true;
+                            signInBtn.textContent = "Signing In...";
+                            try {
+                                const loginRes = await fetch('/api/auth/login', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ email })
+                                });
+                                const loginData = await loginRes.json();
+                                if (loginRes.ok && loginData.success) {
+                                    if (loginData.token) {
+                                        sessionStorage.setItem('lifeos_session_token', loginData.token);
+                                        localStorage.setItem('lifeos_session_token', loginData.token);
+                                    }
+                                    if (loginData.user) {
+                                        sessionStorage.setItem('lifeos_user', JSON.stringify(loginData.user));
+                                        localStorage.setItem('lifeos_user', JSON.stringify(loginData.user));
+                                    }
+                                    if (window.LifeOS && typeof window.LifeOS.transitionToPersonnelWellness === 'function') {
+                                        window.LifeOS.transitionToPersonnelWellness(loginData.user, loginData.profile, loginData.token);
+                                    }
+                                } else {
+                                    alert(loginData?.error?.message || "Sign in failed.");
+                                    signInBtn.disabled = false;
+                                    signInBtn.textContent = `Sign In As ${email} \u2192`;
+                                }
+                            } catch (loginErr) {
+                                alert(`Sign in failed: ${loginErr.message}`);
+                                signInBtn.disabled = false;
+                                signInBtn.textContent = `Sign In As ${email} \u2192`;
+                            }
+                        });
+                    }
+                }
             }
         });
     }
