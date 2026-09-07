@@ -9567,9 +9567,42 @@ document.addEventListener('DOMContentLoaded', () => {
         logAudit(`Admin Alert Dispatched for Registration ${regRecord.id}`, "ALERT");
         addNotification("info", "New Registration Received", `${regRecord.fullName} (${regRecord.role}) submitted registration ${regRecord.id}.`);
 
+        const assignedRole = (formData.role || '').toLowerCase().includes('patient') ? 'patient' : 'personnel';
+        const userObj = {
+            id: regId,
+            fullName: formData.fullName.trim(),
+            email: formData.email.trim().toLowerCase(),
+            phone: fullPhone,
+            country: formData.country || "United States",
+            role: assignedRole,
+            organization: formData.organization ? formData.organization.trim() : "Personal Vault",
+            status: "Active"
+        };
+        const profileObj = {
+            userId: regId,
+            serviceBranch: formData.organization ? formData.organization.trim() : "Personal Vault",
+            dutyType: "Operational Support",
+            rankCategory: "Personnel",
+            unitCohortId: "UNIT-ALPHA-2026",
+            scheduleType: "Regular Day Shift",
+            avgHoursPerWeek: 40.0,
+            shiftPattern: "Standard 8h Shift",
+            workloadIndex: 1.0,
+            operationalEnvironment: "Standard Garrison",
+            profileCompletion: 45,
+            createdAt: regRecord.timestamp,
+            updatedAt: regRecord.timestamp
+        };
+        const token = `LIFEOS-TOKEN-${Date.now()}-${Math.random().toString(36).substring(2, 10)}`;
+
         return {
+            success: true,
+            token,
+            user: userObj,
+            profile: profileObj,
             regRecord,
-            deliveryStatus
+            deliveryStatus,
+            message: "Registration complete. Your Personnel Wellness Profile is ready."
         };
     }
 
