@@ -1223,7 +1223,42 @@ async function handleApiRequest(req, res, pathname) {
         }
     }
 
-    // 7. GET /api/commander/unit-trends (Enforcing Anonymity Threshold >= 5)
+    // 7. DELETE /api/personnel/profile/voluntary-data
+    if (pathname === '/api/personnel/profile/voluntary-data' && req.method === 'DELETE') {
+        const session = authenticate(req);
+        if (!session) {
+            return sendJson(res, 401, {
+                success: false,
+                error: { code: 'UNAUTHORIZED', message: 'Authentication required.' }
+            });
+        }
+
+        const existing = db.prepare(`SELECT * FROM personnel_profiles WHERE user_id = ?`).get(session.user_id);
+        if (existing) {
+            let profileData = {};
+            try { profileData = JSON.parse(existing.profile_data || '{}'); } catch (e) {}
+            profileData.voluntaryNotes = [];
+            profileData.wellnessCheckins = [];
+
+            db.prepare(`
+                UPDATE personnel_profiles
+                SET profile_data = ?, updated_at = ?
+                WHERE user_id = ?
+            `).run(JSON.stringify(profileData), new Date().toISOString(), session.user_id);
+
+            logAudit(session.user_id, 'VOLUNTARY_DATA_DELETED', 'PROFILE_API', ip);
+        }
+
+        db.prepare(`DELETE FROM wellness_notes WHERE user_id = ?`).run(session.user_id);
+        db.prepare(`DELETE FROM wellness_assessments WHERE user_id = ?`).run(session.user_id);
+
+        return sendJson(res, 200, {
+            success: true,
+            message: "Voluntary wellness data deleted successfully."
+        });
+    }
+
+    // 8. GET /api/commander/unit-trends (Enforcing Anonymity Threshold >= 5)
     if (pathname === '/api/commander/unit-trends' && req.method === 'GET') {
         const session = authenticate(req);
         if (!session) {

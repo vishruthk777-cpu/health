@@ -925,9 +925,11 @@ ACTN3 (rs1815739)   | Genotype RR | POWER ATHLETE VARIANT
                 // Store session token and user info
                 if (result.token) {
                     sessionStorage.setItem('lifeos_session_token', result.token);
+                    localStorage.setItem('lifeos_session_token', result.token);
                 }
                 if (result.user) {
                     sessionStorage.setItem('lifeos_user', JSON.stringify(result.user));
+                    localStorage.setItem('lifeos_user', JSON.stringify(result.user));
                 }
 
                 // Update UI Feedback

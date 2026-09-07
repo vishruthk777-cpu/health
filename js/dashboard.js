@@ -1030,6 +1030,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. PORTAL DEFINITIONS & TAB LAYOUTS ---
     const Portals = {
+        personnel: {
+            title: "Personnel Wellness Operating System",
+            tabs: [
+                { id: "personnel_wellness", label: "Personnel Wellness Profile", icon: "user-check" },
+                { id: "twin", label: "Health Twin & Wearables", icon: "activity" },
+                { id: "coach", label: "Daily AI Coach", icon: "sparkles" },
+                { id: "genomics", label: "Genomics Center", icon: "dna" },
+                { id: "intelligence", label: "Health Intelligence", icon: "brain-circuit" },
+                { id: "nutrition", label: "Food Intelligence", icon: "leaf" },
+                { id: "exercise", label: "Exercise Engine", icon: "zap" },
+                { id: "care", label: "Personal Care", icon: "heart" },
+                { id: "longevity", label: "Longevity Engine", icon: "hourglass" },
+                { id: "medication", label: "Medication Intelligence", icon: "pill" },
+                { id: "simulator", label: "Disease Simulator", icon: "sliders" },
+                { id: "consultation", label: "AI Consultation", icon: "stethoscope" }
+            ]
+        },
         patient: {
             title: "Patient Operating System",
             tabs: [
@@ -1265,7 +1282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let viewContent = '';
 
         // --- TAB SELECTION LOGIC ---
-        if (role === 'patient') {
+        if (role === 'patient' || role === 'personnel') {
             if (tab === 'twin') {
                 viewContent = renderPatientTwin();
             } else if (tab === 'personnel_wellness') {
@@ -5082,7 +5099,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const api = (typeof PersonnelWellnessAPI !== 'undefined') ? PersonnelWellnessAPI : (typeof window !== 'undefined' ? window.PersonnelWellnessAPI : (typeof global !== 'undefined' ? global.PersonnelWellnessAPI : null));
         const logger = (typeof PersonnelAuditLogger !== 'undefined') ? PersonnelAuditLogger : (typeof window !== 'undefined' ? window.PersonnelAuditLogger : (typeof global !== 'undefined' ? global.PersonnelAuditLogger : null));
         
-        const activeUser = { id: LifeOS.user.email || "alex.mercer@lifeos.ai", email: LifeOS.user.email || "alex.mercer@lifeos.ai" };
+        const activeUser = { id: LifeOS.user.id || LifeOS.user.email || "alex.mercer@lifeos.ai", email: LifeOS.user.email || "alex.mercer@lifeos.ai" };
+        const targetUserId = LifeOS.user.id || "LIFEOS-USER-001";
 
         // 1. COMMANDER ROLE ANONYMITY GATE & AGGREGATED VIEW
         if (LifeOS.activeRole === 'commander') {
@@ -5091,7 +5109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // 2. FETCH INDIVIDUAL PERSONNEL WELLNESS DATA
-        const res = api.getProfile(activeUser, LifeOS.activeRole, "LIFEOS-USER-001", LifeOS);
+        const res = api.getProfile(activeUser, LifeOS.activeRole, targetUserId, LifeOS);
         if (res.status !== 200) {
             return `
                 <div class="portal-view">
@@ -5111,10 +5129,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const timeframe = LifeOS.mwsTimeframe || "30d";
 
         // Current status & trends
-        const statusRes = api.getCurrentStatus(activeUser, LifeOS.activeRole, "LIFEOS-USER-001", LifeOS);
+        const statusRes = api.getCurrentStatus(activeUser, LifeOS.activeRole, targetUserId, LifeOS);
         const currentStatusData = statusRes.status === 200 ? statusRes.data : { todayStatus: "NOT_COMPLETED", wearable: { connected: false } };
 
-        const trendsRes = api.getTrends(activeUser, LifeOS.activeRole, "LIFEOS-USER-001", timeframe, LifeOS);
+        const trendsRes = api.getTrends(activeUser, LifeOS.activeRole, targetUserId, timeframe, LifeOS);
         const trendsData = trendsRes.status === 200 ? trendsRes.data : null;
 
         // Subnav Pills
@@ -6321,18 +6339,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    window.__mwsDeleteData = function() {
+    window.__mwsDeleteData = async function() {
         if (!confirm("Are you sure you wish to permanently delete all your voluntary wellness assessments and private notes? This cannot be undone.")) return;
 
-        const api = _getSafeMwsApi();
-        if (!api) return;
-        const activeUser = { id: LifeOS.user.email || "alex.mercer@lifeos.ai", email: LifeOS.user.email || "alex.mercer@lifeos.ai" };
-
-        const res = api.deleteWellnessData(activeUser, LifeOS.activeRole, "LIFEOS-USER-001", {}, LifeOS);
-        if (res.status === 200) {
-            addNotification("warning", "Data Purged", res.message);
-            renderActiveView();
+        const token = sessionStorage.getItem('lifeos_session_token') || localStorage.getItem('lifeos_session_token');
+        if (token) {
+            try {
+                await fetch('/api/personnel/profile/voluntary-data', {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+            } catch (e) {}
         }
+
+        const api = _getSafeMwsApi();
+        if (api) {
+            const activeUser = { id: LifeOS.user.id || LifeOS.user.email || "alex.mercer@lifeos.ai", email: LifeOS.user.email || "alex.mercer@lifeos.ai" };
+            const targetUserId = LifeOS.user.id || "LIFEOS-USER-001";
+            api.deleteWellnessData(activeUser, LifeOS.activeRole, targetUserId, {}, LifeOS);
+        }
+
+        addNotification("warning", "Data Purged", "Voluntary wellness notes and check-in history deleted.");
+        renderActiveView();
     };
 
     window.__mwsSubmitSupportRequest = function() {
@@ -6418,7 +6446,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const token = sessionStorage.getItem('lifeos_session_token');
+            const token = sessionStorage.getItem('lifeos_session_token') || localStorage.getItem('lifeos_session_token');
             if (token) {
                 const res = await fetch('/api/personnel/profile', {
                     method: 'PUT',
@@ -6452,7 +6480,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.__logoutPersonnelSession = async function() {
         if (!confirm("Are you sure you want to log out of your Personnel Wellness session?")) return;
 
-        const token = sessionStorage.getItem('lifeos_session_token');
+        const token = sessionStorage.getItem('lifeos_session_token') || localStorage.getItem('lifeos_session_token');
         if (token) {
             try {
                 await fetch('/api/auth/logout', {
@@ -6464,6 +6492,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sessionStorage.removeItem('lifeos_session_token');
         sessionStorage.removeItem('lifeos_user');
+        localStorage.removeItem('lifeos_session_token');
+        localStorage.removeItem('lifeos_user');
 
         // Reset to landing page
         document.body.classList.remove('dashboard-active');
@@ -11196,7 +11226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHealthTwinFromServer();
 
     // Automatic Session Restoration on page load
-    const existingToken = sessionStorage.getItem('lifeos_session_token');
+    const existingToken = sessionStorage.getItem('lifeos_session_token') || localStorage.getItem('lifeos_session_token');
     if (existingToken) {
         fetch('/api/auth/session', {
             headers: { 'Authorization': `Bearer ${existingToken}` }
@@ -11214,6 +11244,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     organization: data.user.organization,
                     status: data.user.status
                 };
+                LifeOS.activeRole = data.user.role === 'patient' ? 'patient' : 'personnel';
                 if (data.profile) {
                     LifeOS.personnelWellnessProfile = data.profile;
                 }
